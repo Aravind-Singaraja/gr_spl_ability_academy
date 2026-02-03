@@ -1,0 +1,331 @@
+:root {
+    --blue: #0b4ea2;
+    --orange: #f57c00;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--blue);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
+    padding: 2px 0;
+}
+
+/* BRAND */
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* LINKS */
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 15px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* ORANGE HOVER / ACTIVE UNDERLINE */
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: var(--orange);
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 100%;
+}
+
+/* CONTACT BUTTON */
+.navbar .btn-warning {
+    background: var(--orange);
+    border: none;
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+.navbar .btn-warning:hover {
+    background: #e66f00;
+}
+
+/* NAVBAR LOGO */
+#navbar_img {
+    height: 90px;
+    /* perfect for desktop */
+    width: auto;
+    /* keeps aspect ratio */
+    object-fit: contain;
+}
+
+/* Center align brand vertically */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    #navbar_img {
+        height: 50px;
+    }
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ===============================
+   BOOTSTRAP CAROUSEL FIX
+================================ */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    min-height: 100vh;
+}
+
+/* ===============================
+   EACH SLIDE
+================================ */
+.hero-slide {
+    min-height: 100vh;
+    width: 100%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===============================
+   OVERLAY
+================================ */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+    padding: 24px;
+    max-width: 900px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.hero-logo {
+    width: 300px;
+    max-width: 80%;
+    margin-bottom: 2px;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ===============================
+   FLOAT ANIMATION
+================================ */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ===============================
+   TEXT
+================================ */
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* ===============================
+   MOBILE FIX (CRITICAL)
+================================ */
+@media (max-width: 768px) {
+
+    /* Mobile-safe viewport height */
+    .hero,
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .hero-slide {
+        min-height: 100svh;
+    }
+
+    /* Background image adjustment */
+    .hero-slide {
+        background-position: center top;
+    }
+
+    /* Content spacing */
+    .hero-content {
+        padding: 16px;
+    }
+
+    /* Logo scaling */
+    .hero-logo {
+        width: 160px;
+        margin-bottom: 16px;
+    }
+
+    /* Text scaling */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* ===============================
+   VERY SMALL DEVICES
+================================ */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-logo {
+        width: 140px;
+    }
+}
+
+
+/* SECTIONS */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--blue);
+}
+
+/* PROGRAM CARDS */
+.program-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    transition: .4s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+}
+
+.program-card i {
+    font-size: 40px;
+    color: var(--orange);
+    margin-bottom: 15px;
+}
+
+/* WHY SECTION */
+.why-item {
+    margin-bottom: 80px;
+}
+
+.why-img {
+    width: 100%;
+    border-radius: 22px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .12);
+    transition: transform .6s ease;
+}
+
+.why-img:hover {
+    transform: scale(1.03);
+}
+
+#why h4 {
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+#why p {
+    font-size: 1.05rem;
+    color: #555;
+}
+
+/* CTA */
+.cta {
+    background: var(--orange);
+    color: white;
+    padding: 70px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .why-item {
+        text-align: center;
+    }
+
+    .why-item .col-md-6 {
+        margin-bottom: 20px;
+    }
+}
