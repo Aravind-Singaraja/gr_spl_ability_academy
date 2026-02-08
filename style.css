@@ -98,169 +98,109 @@ body {
     }
 }
 
-/* ===============================
-   HERO SECTION
-================================ */
+
 .hero {
-    min-height: 100vh;
     width: 100%;
     overflow: hidden;
 }
 
 /* ===============================
-   BOOTSTRAP CAROUSEL FIX
+   CAROUSEL AUTO-HEIGHT FIX
 ================================ */
 .carousel,
 .carousel-inner,
 .carousel-item {
-    min-height: 100vh;
+    width: 100%;
+    height: auto !important;
+}
+
+/* Prevent Bootstrap from forcing height */
+.carousel-item {
+    display: block;
 }
 
 /* ===============================
-   EACH SLIDE
+   HERO SLIDE
 ================================ */
 .hero-slide {
-    min-height: 100vh;
-    width: 100%;
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-
     position: relative;
+    width: 100%;
+    height: auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background: #000; /* fallback behind image */
 }
-
-
-@media (max-width: 768px) {
-    .hero-slide {
-        background-size: contain;
-        background-position: center top;
-    }
-}
-
 
 /* ===============================
-   OVERLAY
+   IMAGE — FULL IMAGE ALWAYS
+================================ */
+.hero-img {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    display: block;
+
+    object-fit: contain;   /* KEY: no crop */
+    object-position: center;
+
+    margin: 0 auto;
+}
+
+/* ===============================
+   OVERLAY (FOLLOWS IMAGE HEIGHT)
 ================================ */
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
     z-index: 1;
 }
 
 /* ===============================
-   CONTENT
+   CONTENT CENTERED OVER IMAGE
 ================================ */
 .hero-content {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 2;
-
-    color: #fff;
-    padding: 24px;
-    max-width: 900px;
-    width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
     text-align: center;
+    color: #fff;
+    padding: clamp(16px, 4vw, 32px);
 }
 
 /* ===============================
    LOGO
 ================================ */
 .hero-logo {
-    width: 300px;
-    max-width: 80%;
-    margin-bottom: 2px;
-    animation: float 4s ease-in-out infinite;
-}
-
-/* ===============================
-   FLOAT ANIMATION
-================================ */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
+    width: clamp(140px, 20vw, 280px);
+    margin-bottom: 12px;
 }
 
 /* ===============================
    TEXT
 ================================ */
-.hero-content h1 {
-    font-size: 3rem;
+.hero-content h1,
+.hero-content h2 {
+    font-size: clamp(1.6rem, 4vw, 3rem);
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 10px;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     opacity: 0.95;
-}
-
-/* ===============================
-   MOBILE FIX (CRITICAL)
-================================ */
-@media (max-width: 768px) {
-
-    /* Mobile-safe viewport height */
-    .hero,
-    .carousel,
-    .carousel-inner,
-    .carousel-item,
-    .hero-slide {
-        min-height: 100svh;
-    }
-
-    /* Background image adjustment */
-    .hero-slide {
-        background-position: center top;
-    }
-
-    /* Content spacing */
-    .hero-content {
-        padding: 16px;
-    }
-
-    /* Logo scaling */
-    .hero-logo {
-        width: 160px;
-        margin-bottom: 16px;
-    }
-
-    /* Text scaling */
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-/* ===============================
-   VERY SMALL DEVICES
-================================ */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.6rem;
-    }
-
-    .hero-logo {
-        width: 140px;
-    }
 }
 
 
