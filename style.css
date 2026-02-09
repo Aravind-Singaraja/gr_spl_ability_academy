@@ -71,6 +71,17 @@ body {
     padding: 8px 16px;
 }
 
+.btn-contact {
+    background: #d96400;
+    /* darker orange */
+    color: #ffffff;
+}
+
+.btn-contact:hover {
+    background: #b95300;
+}
+
+
 .navbar .btn-warning:hover {
     background: #e66f00;
 }
@@ -130,7 +141,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: #000; /* fallback behind image */
+    background: #000;
+    /* fallback behind image */
 }
 
 /* ===============================
@@ -142,7 +154,8 @@ body {
     height: auto;
     max-width: 100%;
     display: block;
-    object-fit: contain;   /* KEY: no crop */
+    object-fit: contain;
+    /* KEY: no crop */
     object-position: center;
     margin: 0 auto;
 }
@@ -357,6 +370,11 @@ footer {
         flex-direction: column;
     }
 }
+
+.contact-section .section-title {
+    color: #ffffff;
+}
+
 
 .floating-cta {
     position: fixed;
