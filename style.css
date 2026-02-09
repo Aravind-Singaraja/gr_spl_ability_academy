@@ -98,7 +98,6 @@ body {
     }
 }
 
-
 .hero {
     width: 100%;
     overflow: hidden;
@@ -139,16 +138,12 @@ body {
 ================================ */
 .hero-img {
     position: relative;
-
     width: 100%;
     height: auto;
-
     max-width: 100%;
     display: block;
-
     object-fit: contain;   /* KEY: no crop */
     object-position: center;
-
     margin: 0 auto;
 }
 
@@ -170,12 +165,10 @@ body {
     position: absolute;
     inset: 0;
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     color: #fff;
     padding: clamp(16px, 4vw, 32px);
